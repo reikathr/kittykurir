@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://ba32haoglyng4"
+path="res://.godot/imported/cockatiel.dialogue-98629218627e473b28ad30217997c511.tres"
+
+[deps]
+
+source_file="res://dialogue/cockatiel.dialogue"
+dest_files=["res://.godot/imported/cockatiel.dialogue-98629218627e473b28ad30217997c511.tres"]
+
+[params]
+
+defaults=true

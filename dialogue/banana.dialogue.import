@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://d18t1t8usek6u"
+path="res://.godot/imported/banana.dialogue-f4d576e9ff17510d5c62684bcff22322.tres"
+
+[deps]
+
+source_file="res://dialogue/banana.dialogue"
+dest_files=["res://.godot/imported/banana.dialogue-f4d576e9ff17510d5c62684bcff22322.tres"]
+
+[params]
+
+defaults=true

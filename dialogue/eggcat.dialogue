@@ -1,0 +1,17 @@
+~ start
+You: Hey there.
+Cat: …
+You: …
+Cat: You must be wondering why I have an egg on my head.
+You: Uh… meow.
+Cat: I don't wanna talk about it. Can you get it off of me?
+- Help him
+	Cat: Thank you! What do you want to know, little mailcat?
+	You: Do you know anything about the kids over at Fruit Street?
+	Cat: I can't say I know much, but I do know that the kid in the second house loves dolls.
+	Cat: She got them during the town gift exchange and was super happy about it.
+	You: Thanks!
+	Cat: Isn't it weird that we're both cats?
+- Leave him
+	Cat: No help? Really?
+=> END

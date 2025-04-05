@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b07a20o3airqs"
+path="res://.godot/imported/eggcat.dialogue-715caf1ac25ceb4328d7f5a18e2b8c9c.tres"
+
+[deps]
+
+source_file="res://dialogue/eggcat.dialogue"
+dest_files=["res://.godot/imported/eggcat.dialogue-715caf1ac25ceb4328d7f5a18e2b8c9c.tres"]
+
+[params]
+
+defaults=true

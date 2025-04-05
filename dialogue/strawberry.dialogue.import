@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://h2cgrdscepce"
+path="res://.godot/imported/strawberry.dialogue-624dbbd85c04f768108c4b5e153b1fd4.tres"
+
+[deps]
+
+source_file="res://dialogue/strawberry.dialogue"
+dest_files=["res://.godot/imported/strawberry.dialogue-624dbbd85c04f768108c4b5e153b1fd4.tres"]
+
+[params]
+
+defaults=true

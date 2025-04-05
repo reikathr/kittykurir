@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://hlkiv7a7w0uf"
+path="res://.godot/imported/apple.dialogue-0ec5b5a0a94c6a13baafc705b2af74ce.tres"
+
+[deps]
+
+source_file="res://dialogue/apple.dialogue"
+dest_files=["res://.godot/imported/apple.dialogue-0ec5b5a0a94c6a13baafc705b2af74ce.tres"]
+
+[params]
+
+defaults=true

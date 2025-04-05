@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://umyyeprltc63"
+path="res://.godot/imported/pineapple.dialogue-272eef3e4a5ede6825f284d9b11a527e.tres"
+
+[deps]
+
+source_file="res://dialogue/pineapple.dialogue"
+dest_files=["res://.godot/imported/pineapple.dialogue-272eef3e4a5ede6825f284d9b11a527e.tres"]
+
+[params]
+
+defaults=true

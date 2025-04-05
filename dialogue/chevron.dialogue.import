@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://tchhv1763b10"
+path="res://.godot/imported/chevron.dialogue-1c59cf51924035cbb89b04c2254f2ef8.tres"
+
+[deps]
+
+source_file="res://dialogue/chevron.dialogue"
+dest_files=["res://.godot/imported/chevron.dialogue-1c59cf51924035cbb89b04c2254f2ef8.tres"]
+
+[params]
+
+defaults=true

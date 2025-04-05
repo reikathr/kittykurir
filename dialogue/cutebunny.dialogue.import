@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://blv2dcdjpkn6y"
+path="res://.godot/imported/cutebunny.dialogue-593bd6cb5e55503cc2557784905f2466.tres"
+
+[deps]
+
+source_file="res://dialogue/cutebunny.dialogue"
+dest_files=["res://.godot/imported/cutebunny.dialogue-593bd6cb5e55503cc2557784905f2466.tres"]
+
+[params]
+
+defaults=true

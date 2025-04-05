@@ -1,0 +1,9 @@
+~ start
+You: What rotten luck… on my first day at the new job?! I can't go back to the factory… No… not the factory… I'll just have to figure something out. Let's see.
+[Open inventory]
+You: Ah, I have my packages here! Maybe I can use it to store other stuff that might come handy.
+[Open notebook]
+You: Oh, my notebook! I can keep track of clues on this page. Boss gave me a memo so I know the information about the recipients, but they're all scrambled up, gah.
+[Choose the other tab]
+You: Then, I can map out which package goes to which house in this table. All it'll take is some skillful deduction, nya!
+=> END

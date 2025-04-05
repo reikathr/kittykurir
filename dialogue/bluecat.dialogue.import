@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://c26l63tev4s5w"
+path="res://.godot/imported/bluecat.dialogue-aa6fce7fff1dcbc87a36c7a3f1269d2a.tres"
+
+[deps]
+
+source_file="res://dialogue/bluecat.dialogue"
+dest_files=["res://.godot/imported/bluecat.dialogue-aa6fce7fff1dcbc87a36c7a3f1269d2a.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b1r4fufmwrjjk"
+path="res://.godot/imported/tomato.dialogue-3e74df8af46e290a972d80d07ffc612f.tres"
+
+[deps]
+
+source_file="res://dialogue/tomato.dialogue"
+dest_files=["res://.godot/imported/tomato.dialogue-3e74df8af46e290a972d80d07ffc612f.tres"]
+
+[params]
+
+defaults=true

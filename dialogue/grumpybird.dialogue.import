@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bcha2sch1eykd"
+path="res://.godot/imported/grumpybird.dialogue-129ad6f4684e17b10f7eb59e70e16f2a.tres"
+
+[deps]
+
+source_file="res://dialogue/grumpybird.dialogue"
+dest_files=["res://.godot/imported/grumpybird.dialogue-129ad6f4684e17b10f7eb59e70e16f2a.tres"]
+
+[params]
+
+defaults=true

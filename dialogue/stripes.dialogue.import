@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dooaw63v3yf22"
+path="res://.godot/imported/stripes.dialogue-96caaba7d5afa554ab2f6091615c3ac7.tres"
+
+[deps]
+
+source_file="res://dialogue/stripes.dialogue"
+dest_files=["res://.godot/imported/stripes.dialogue-96caaba7d5afa554ab2f6091615c3ac7.tres"]
+
+[params]
+
+defaults=true

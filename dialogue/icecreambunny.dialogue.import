@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bd743wbjbrpma"
+path="res://.godot/imported/icecreambunny.dialogue-79a155ae19497428a2138c375e2d4f21.tres"
+
+[deps]
+
+source_file="res://dialogue/icecreambunny.dialogue"
+dest_files=["res://.godot/imported/icecreambunny.dialogue-79a155ae19497428a2138c375e2d4f21.tres"]
+
+[params]
+
+defaults=true

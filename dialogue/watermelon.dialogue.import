@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://crro4ilr2k1k2"
+path="res://.godot/imported/watermelon.dialogue-d67372101bcaf55e15ed5b53b52ba25c.tres"
+
+[deps]
+
+source_file="res://dialogue/watermelon.dialogue"
+dest_files=["res://.godot/imported/watermelon.dialogue-d67372101bcaf55e15ed5b53b52ba25c.tres"]
+
+[params]
+
+defaults=true
