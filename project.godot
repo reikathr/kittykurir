@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="KittyKurir"
-run/main_scene="res://MainScene.tscn"
+run/main_scene="res://room.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -37,7 +37,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/opening.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/opening.dialogue", "res://dialogue/intro.dialogue", "res://dialogue/tomato.dialogue", "res://dialogue/eggcat.dialogue", "res://dialogue/cockatiel.dialogue", "res://dialogue/diamond.dialogue", "res://dialogue/banana.dialogue", "res://dialogue/apple.dialogue", "res://dialogue/pineapple.dialogue", "res://dialogue/koala.dialogue", "res://dialogue/strawberry.dialogue", "res://dialogue/stripes.dialogue", "res://dialogue/watermelon.dialogue", "res://dialogue/chevron.dialogue", "res://dialogue/icecreambunny.dialogue", "res://dialogue/dialogue.dialogue", "res://dialogue/frog.dialogue", "res://dialogue/cutebunny.dialogue", "res://dialogue/controller.dialogue", "res://dialogue/bluecat.dialogue", "res://dialogue/grumpybird.dialogue")
 
 [layer_names]
 
