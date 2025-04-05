@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://0wgvmbrlql8a"]
+[gd_scene load_steps=4 format=3 uid="uid://bn615vq8x3mrg"]
 
-[ext_resource type="Texture2D" uid="uid://lh2bw7xu3133" path="res://level1npcs.tres" id="1_qrqah"]
+[ext_resource type="Texture2D" uid="uid://lh2bw7xu3133" path="res://level1npcs.tres" id="1_tv5cx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_505yx"]
-radius = 8.0
+radius = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eoo0q"]
-atlas = ExtResource("1_qrqah")
-region = Rect2(16, 16, 16, 16)
+atlas = ExtResource("1_tv5cx")
+region = Rect2(48, 80, 16, 17)
 
-[node name="Strawberry" type="StaticBody2D"]
+[node name="Lamb" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_505yx")
