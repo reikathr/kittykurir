@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1d2qhpp4qfbo"]
+
+[ext_resource type="FontFile" uid="uid://dyie45y6gwtrn" path="res://assets/fonts/PixelOperator.ttf" id="1_7xcb5"]
+
+[sub_resource type="GDScript" id="GDScript_pg5ly"]
+script/source = "extends Node2D
+
+@onready var choice_button_scn = preload(\"res://ChoiceButton.tscn\")
+
+var choice_buttons: Array[Button] = []
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func add_text(text: String):
+	pass
+	
+func add_choice(choice_text: String):
+	var button_obj = choice_button_scn.instantiate()
+	button_obj.choice_index = choice_buttons.size()
+	choice_buttons.push_back(button_obj)
+	$VBoxContained.add_child(button_obj)
+	pass
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_u3ard"]
+font = ExtResource("1_7xcb5")
+font_size = 10
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DialogueBox" type="Node2D" parent="."]
+script = SubResource("GDScript_pg5ly")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox"]
+offset_left = 126.0
+offset_top = 133.0
+offset_right = 192.0
+offset_bottom = 173.0
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="DialogueBox/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7xcb5")
+theme_override_font_sizes/font_size = 8
+text = "1. option"
+
+[node name="DialogueSection" type="PanelContainer" parent="DialogueBox"]
+offset_top = 129.0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="SpeakerSection" type="PanelContainer" parent="DialogueBox"]
+offset_top = 113.0
+offset_right = 94.0
+offset_bottom = 130.0
+
+[node name="Label" type="Label" parent="DialogueBox/SpeakerSection"]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_u3ard")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5crlu3qiwxwq"]
+
+[ext_resource type="Texture2D" uid="uid://m0mwl46oj7k5" path="res://HouseAtlas.tres" id="1_1qnpy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7rcx"]
+atlas = ExtResource("1_1qnpy")
+region = Rect2(32, 42, 48, 54)
+
+[node name="House2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -19)
+texture = SubResource("AtlasTexture_y7rcx")
