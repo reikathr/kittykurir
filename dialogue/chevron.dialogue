@@ -1,3 +1,4 @@
 ~ start
 You: Chevron wallpaper. Sort of old, but I suppose it's a classic of sorts.
+do ClueManager.add_clue("The fourth house has chevron wallpaper.")
 => END

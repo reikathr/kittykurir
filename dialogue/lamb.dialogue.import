@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bhnv8hk6xmms4"
+path="res://.godot/imported/lamb.dialogue-5915bc1c6e0da73808f2056f382ca5d4.tres"
+
+[deps]
+
+source_file="res://dialogue/lamb.dialogue"
+dest_files=["res://.godot/imported/lamb.dialogue-5915bc1c6e0da73808f2056f382ca5d4.tres"]
+
+[params]
+
+defaults=true

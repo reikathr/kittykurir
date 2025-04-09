@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cscvcj0hsqti1"
+path="res://.godot/imported/glenda.dialogue-bf0c53330189d89e0fd4670d5ce351a9.tres"
+
+[deps]
+
+source_file="res://dialogue/glenda.dialogue"
+dest_files=["res://.godot/imported/glenda.dialogue-bf0c53330189d89e0fd4670d5ce351a9.tres"]
+
+[params]
+
+defaults=true

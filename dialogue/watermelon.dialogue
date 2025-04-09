@@ -7,4 +7,5 @@ You: That's understandable…
 Watermelon: But I suppose a hint would be fine. Kei's house is somewhere to the left of mine.
 You: Oh, thanks a lot!
 Watermelon: You're welcome, and good luck.
+do ClueManager.add_clue("Kei's house is somewhere to the left of the watermelon's house.")
 => END

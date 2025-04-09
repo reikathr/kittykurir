@@ -1,6 +1,7 @@
 extends Control
 
-@onready var grid = $GridContainer
+@onready var grid = $ScrollContainer/VBoxContainer/GridContainer
+@onready var clue_box = $ScrollContainer/VBoxContainer/ClueBox
 var custom_theme = Theme.new()
 var custom_font : Font
 
@@ -17,6 +18,7 @@ var dropdowns = {}
 var selected_values = {}
 
 func _ready():
+	ClueManager.connect("new_clue", self.show_clue)
 	grid.columns = 6
 	grid.custom_minimum_size = Vector2(30, 0)
 	grid.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
@@ -127,6 +129,8 @@ func _ready():
 			dropdown.item_selected.connect(_on_dropdown_selected.bind(category, house_index, dropdown))  
 			grid.add_child(dropdown)
 			dropdowns[category].append(dropdown)
+	for clue in ClueManager.clues:
+		show_clue(clue)
 
 func _on_dropdown_selected(index: int, category: String, house_index: int, changed_dropdown: OptionButton):
 	var previous_value = selected_values[category].get(house_index, "")  # Get previously selected value
@@ -149,3 +153,12 @@ func _on_dropdown_selected(index: int, category: String, house_index: int, chang
 		for i in range(1, dropdown.get_item_count()):
 			if dropdown.get_item_text(i) == selected_value:
 				dropdown.set_item_disabled(i, true)
+
+func show_clue(clue_text: String):
+	var clue_label = Label.new()
+	clue_label.text = clue_text
+	clue_label.add_theme_font_size_override("font_size", 7)
+	clue_label.add_theme_font_override("font", custom_font)
+	clue_label.autowrap_mode = TextServer.AUTOWRAP_WORD
+	clue_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	clue_box.add_child(clue_label)

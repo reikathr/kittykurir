@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://c8610nxmwu5mo"
+path="res://.godot/imported/fruitstreet.dialogue-cb895dcbdf0ee28919e4b9e781a57627.tres"
+
+[deps]
+
+source_file="res://dialogue/fruitstreet.dialogue"
+dest_files=["res://.godot/imported/fruitstreet.dialogue-cb895dcbdf0ee28919e4b9e781a57627.tres"]
+
+[params]
+
+defaults=true

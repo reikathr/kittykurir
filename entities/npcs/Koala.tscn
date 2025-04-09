@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://da6xbeor1jts6"]
+[gd_scene load_steps=7 format=3 uid="uid://da6xbeor1jts6"]
 
 [ext_resource type="Texture2D" uid="uid://lh2bw7xu3133" path="res://level1npcs.tres" id="1_0fsf0"]
+[ext_resource type="PackedScene" uid="uid://dr2ppdr0agxd6" path="res://helper/Actionable.tscn" id="2_sr8rj"]
+[ext_resource type="Resource" uid="uid://dxe373jvhb2f3" path="res://dialogue/koala.dialogue" id="3_ni477"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_505yx"]
 radius = 7.0
@@ -8,6 +10,8 @@ radius = 7.0
 [sub_resource type="AtlasTexture" id="AtlasTexture_eoo0q"]
 atlas = ExtResource("1_0fsf0")
 region = Rect2(48, 48, 16, 17)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rmr2x"]
 
 [node name="Koala" type="StaticBody2D"]
 
@@ -17,3 +21,10 @@ shape = SubResource("CircleShape2D_505yx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_eoo0q")
+
+[node name="Actionable" parent="." instance=ExtResource("2_sr8rj")]
+dialogue_resource = ExtResource("3_ni477")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_rmr2x")

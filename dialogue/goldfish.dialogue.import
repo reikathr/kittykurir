@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://te6l8nj854k1"
+path="res://.godot/imported/goldfish.dialogue-9ddf13dfeca832350bacd39c50af03e6.tres"
+
+[deps]
+
+source_file="res://dialogue/goldfish.dialogue"
+dest_files=["res://.godot/imported/goldfish.dialogue-9ddf13dfeca832350bacd39c50af03e6.tres"]
+
+[params]
+
+defaults=true

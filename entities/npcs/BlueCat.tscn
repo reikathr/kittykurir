@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://yktu2i5g7cj"]
+[gd_scene load_steps=7 format=3 uid="uid://yktu2i5g7cj"]
 
 [ext_resource type="Texture2D" uid="uid://lh2bw7xu3133" path="res://level1npcs.tres" id="1_c1m0v"]
+[ext_resource type="PackedScene" uid="uid://dr2ppdr0agxd6" path="res://helper/Actionable.tscn" id="2_qagyp"]
+[ext_resource type="Resource" uid="uid://c26l63tev4s5w" path="res://dialogue/bluecat.dialogue" id="3_83hdq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_505yx"]
 radius = 7.0
@@ -9,6 +11,8 @@ radius = 7.0
 atlas = ExtResource("1_c1m0v")
 region = Rect2(144, 48, 16, 17)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5y0ms"]
+
 [node name="Strawberry" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,3 +20,9 @@ shape = SubResource("CircleShape2D_505yx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_eoo0q")
+
+[node name="Actionable" parent="." instance=ExtResource("2_qagyp")]
+dialogue_resource = ExtResource("3_83hdq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_5y0ms")

@@ -10,4 +10,5 @@ Pineapple: Hm. All I know is there's a 14 year old that lives to the right of Ke
 You: I'm not sure I do.
 Pineapple: Sucks to be you.
 You: (Why are so many of them mean to me?)
+do ClueManager.add_clue("The 14-year-old lives somewhere to the right of Kei's house.")
 => END

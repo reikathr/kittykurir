@@ -10,34 +10,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TabContainer" type="TabContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+clip_contents = true
 layout_mode = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 316.0
-offset_bottom = 175.0
-current_tab = 0
+offset_left = 7.0
+offset_top = 8.0
+offset_right = 312.0
+offset_bottom = 174.0
 
-[node name="Table" type="MarginContainer" parent="TabContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+clip_contents = true
 layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 0
-metadata/_tab_index = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
-[node name="Control" parent="TabContainer/Table" instance=ExtResource("1_58bja")]
-layout_mode = 2
-
-[node name="Clues" type="MarginContainer" parent="TabContainer"]
-visible = false
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 0
-metadata/_tab_index = 1
-
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Clues"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Clues/ScrollContainer"]
+[node name="Control" parent="PanelContainer/MarginContainer" instance=ExtResource("1_58bja")]
+clip_contents = true
 layout_mode = 2

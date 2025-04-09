@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://buh27j3ad4qei"]
+[gd_scene load_steps=4 format=3 uid="uid://buh27j3ad4qei"]
 
 [ext_resource type="Texture2D" uid="uid://m0mwl46oj7k5" path="res://HouseAtlas.tres" id="1_fn3xi"]
 
@@ -6,8 +6,15 @@
 atlas = ExtResource("1_fn3xi")
 region = Rect2(32, 186, 48, 54)
 
-[node name="MissionHouse1" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8m1v0"]
+size = Vector2(44, 21)
+
+[node name="MissionHouse1" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -19)
 texture = SubResource("AtlasTexture_y7rcx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_8m1v0")

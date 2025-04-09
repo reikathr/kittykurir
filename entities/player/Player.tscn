@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://entities/player/Player.gd" id="1_tvlyn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gybe0"]
-radius = 8.01561
+radius = 7.2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgval"]
 atlas = ExtResource("1_mexq5")
@@ -214,7 +214,7 @@ radius = 9.0
 script = ExtResource("1_tvlyn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_gybe0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -223,7 +223,10 @@ sprite_frames = SubResource("SpriteFrames_8sm1u")
 animation = &"walk_back"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -96
+limit_left = -128
+limit_top = -160
+limit_right = 1424
+limit_bottom = 608
 
 [node name="ActionableFinder" type="Area2D" parent="."]
 position = Vector2(5, 2)

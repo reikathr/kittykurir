@@ -1,0 +1,12 @@
+~ start
+You: Hi, there.
+Lamb: Have you seen Tomy?
+You: No… I think?
+Lamb: They're about this tall.
+You: Uh…
+Lamb: They're 12 years old!
+You: Um…
+Lamb: Ack, I need to find Tomy!
+You: Yikes.
+do ClueManager.add_clue("Tomy is 12 years old.")
+=> END

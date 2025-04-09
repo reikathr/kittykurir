@@ -1,18 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://k7uhogglckql"]
+[gd_scene load_steps=8 format=3 uid="uid://k7uhogglckql"]
 
 [ext_resource type="Texture2D" uid="uid://lh2bw7xu3133" path="res://level1npcs.tres" id="1_mwb46"]
+[ext_resource type="Script" path="res://entities/npcs/scripts/EggCat.gd" id="1_w4y8h"]
+[ext_resource type="PackedScene" uid="uid://dr2ppdr0agxd6" path="res://helper/Actionable.tscn" id="2_tdvue"]
+[ext_resource type="Resource" uid="uid://b07a20o3airqs" path="res://dialogue/eggcat.dialogue" id="3_hb25y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_505yx"]
-radius = 8.0
+radius = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eoo0q"]
 atlas = ExtResource("1_mwb46")
 region = Rect2(16, 48, 16, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xn632"]
+
 [node name="EggCat" type="StaticBody2D"]
+script = ExtResource("1_w4y8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_505yx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_eoo0q")
+
+[node name="Actionable" parent="." instance=ExtResource("2_tdvue")]
+dialogue_resource = ExtResource("3_hb25y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_xn632")

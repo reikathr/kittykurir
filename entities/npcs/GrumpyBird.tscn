@@ -1,19 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cghla0pcab2ag"]
+[gd_scene load_steps=7 format=3 uid="uid://cghla0pcab2ag"]
 
 [ext_resource type="Texture2D" uid="uid://lh2bw7xu3133" path="res://level1npcs.tres" id="1_j05bd"]
+[ext_resource type="PackedScene" uid="uid://dr2ppdr0agxd6" path="res://helper/Actionable.tscn" id="2_1qrl8"]
+[ext_resource type="Resource" uid="uid://bcha2sch1eykd" path="res://dialogue/grumpybird.dialogue" id="3_rk1p2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_505yx"]
-radius = 8.0
+radius = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eoo0q"]
 atlas = ExtResource("1_j05bd")
 region = Rect2(112, 16, 16, 17)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhiv4"]
+
 [node name="GrumpyBird" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_505yx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_eoo0q")
+
+[node name="Actionable" parent="." instance=ExtResource("2_1qrl8")]
+dialogue_resource = ExtResource("3_rk1p2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_mhiv4")

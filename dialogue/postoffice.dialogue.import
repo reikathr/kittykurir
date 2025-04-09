@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b4ag6tgnw3cql"
+path="res://.godot/imported/postoffice.dialogue-2ed30e4b9eb3935424cb5a7274874972.tres"
+
+[deps]
+
+source_file="res://dialogue/postoffice.dialogue"
+dest_files=["res://.godot/imported/postoffice.dialogue-2ed30e4b9eb3935424cb5a7274874972.tres"]
+
+[params]
+
+defaults=true

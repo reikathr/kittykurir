@@ -1,0 +1,30 @@
+~ start
+if !GameState.hasReunitedGalphie:
+	if !GameState.hasMetAlphaba:
+		Glenda: Oh, Alphaba…
+		You: Do you wanna find Alphaba?
+		Glenda: Yes! I can't believe we landed here… but at least we're far away from Auz…
+		Glenda: She wears a lot of black, I'm sure it won't be hard to find her.
+	else:
+		Glenda: Oh, Alphaba…
+		You: I know where she is. Come with me!
+		Glenda: Oh, dear, thank you, kind stranger!
+		do GameState.set_has_reunited_galphie(true)
+		do GameState.has_reunited_galphie.emit()
+	do GameState.set_has_met_glenda(true)
+else:
+	if GameState.hasReceivedGalphieClue:
+		Alphaba: Glenda, dreams the way we planned 'em
+		Glenda: If we work in tandem
+		Both: There's no fight we cannot win~
+	else:
+		Glenda: To thank you, I will tell you anything you want to know about.
+		You: Who do all of these packages belong to?
+		Glenda: … Well, I received a message from my… magic, and it's been foretold that the house with the polkadot wallpaper is somewhere between the strawberry's house and Tomy's house.
+		You: Uh, okay.
+		Alphaba: I can help you too. I asked around earlier.
+		Alphaba: I gathered that the 12-year-old lives somewhere between the house with the striped wallpaper and the 13-year-old's house.
+		You: Okay, thank you, the both of you.
+		do ClueManager.add_clue("The 12-year-old lives somewhere between the house with the striped wallpaper and the 13-year-old's house, in that order.")
+		do ClueManager.add_clue("The house with the polkadot wallpaper is somewhere between the strawberry's house and Tomy's house, in that order.")
+=> END

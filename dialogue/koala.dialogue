@@ -10,5 +10,5 @@ Koala: Sorry for dumping this onto you. But there's a bright side to my situatio
 Koala: I tutor a kid on Fruit Street, the one with the chevron wallpaper in the house. They love science, it makes me feel fulfilled.
 You: Aw, that's great. I hope you find happiness in what you're doing. Science can be so cool.
 Koala: It is. Thanks for listening.
-
+do ClueManager.add_clue("The kid that lives in the house with chevron wallpaper loves science.")
 => END

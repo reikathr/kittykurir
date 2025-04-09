@@ -14,6 +14,7 @@ Frog: Did I freak you out? Sorry. Do you want another fun fact? You can choose w
 	Frog: Oh, them. I know Kei. I think they live somewhere to the left of the kid that likes drawing. Do you know Kei?
 	You: Not really.
 	Frog: Oh, well.
+	do ClueManager.add_clue("Kei lives somewhere to the left of the kid that wants a drawing set.")
 - Animals again
 	Frog: You're not supposed to touch parrots on their feathers. Like, anything below the neck is a no-no.
 	You: Why is that?

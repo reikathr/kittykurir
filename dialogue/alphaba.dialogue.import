@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://b42sdcor7f0v0"
+path="res://.godot/imported/alphaba.dialogue-49d4504a084ecefd59818789aeef3ad5.tres"
+
+[deps]
+
+source_file="res://dialogue/alphaba.dialogue"
+dest_files=["res://.godot/imported/alphaba.dialogue-49d4504a084ecefd59818789aeef3ad5.tres"]
+
+[params]
+
+defaults=true

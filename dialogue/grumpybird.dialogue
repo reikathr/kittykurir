@@ -5,4 +5,5 @@ You: (Huh… not so grumpy after all.)
 Not-Grumpy Bird: He's always running around with his neighbors. They live on Fruit Street. Not sure which house is his, but I know the first house belongs to Jin.
 You: Thanks a lot!
 Not-Grumpy Bird: You're welcome.
+do ClueManager.add_clue("Jin is the parent that owns the first house.")
 => END

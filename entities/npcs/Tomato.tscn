@@ -1,19 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkty4bktibe17"]
+[gd_scene load_steps=7 format=3 uid="uid://bkty4bktibe17"]
 
 [ext_resource type="Texture2D" uid="uid://lh2bw7xu3133" path="res://level1npcs.tres" id="1_fdow6"]
+[ext_resource type="PackedScene" uid="uid://dr2ppdr0agxd6" path="res://helper/Actionable.tscn" id="2_sjq7j"]
+[ext_resource type="Resource" uid="uid://b1r4fufmwrjjk" path="res://dialogue/tomato.dialogue" id="3_hyqit"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_505yx"]
-radius = 8.0
+radius = 7.07107
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eoo0q"]
 atlas = ExtResource("1_fdow6")
 region = Rect2(48, 16, 16, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nev36"]
+
 [node name="Tomato" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_505yx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_eoo0q")
+
+[node name="Actionable" parent="." instance=ExtResource("2_sjq7j")]
+dialogue_resource = ExtResource("3_hyqit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_nev36")

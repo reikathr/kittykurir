@@ -7,4 +7,5 @@ Cockatiel: He lives somewhere to the left.
 You: Okay… to the left of who exactly?
 Cockatiel: The banana. Jeez, you ask so many questions.
 You: Alright, sorry…
+do ClueManager.add_clue("Tomy lives somewhere to the left of the banana.")
 => END

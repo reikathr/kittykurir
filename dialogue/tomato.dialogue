@@ -14,4 +14,5 @@ Tomato: Somewhere between my best friend's house and mine.
 You: Do you know anything about your best friend?
 Tomato: They're 10 years old.
 You: Okay, I can work with that. Thank you, nya!
+do ClueManager.add_clue("The apple lives somewhere between the 10-year-old and the tomato, in that order.")
 => END

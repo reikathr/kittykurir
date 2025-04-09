@@ -7,4 +7,5 @@ You: How old is too old?
 Apple: 11!
 You: Okay, sorry.
 You: (I wonder if they'll realize…)
+do ClueManager.add_clue("The 11-year-old is an apple.")
 => END

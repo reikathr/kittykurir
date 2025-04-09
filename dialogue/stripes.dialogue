@@ -1,3 +1,4 @@
 ~ start
 You: Ooh, striped wallpaper. Personally not a big fan, makes me dizzy.
+do ClueManager.add_clue("The first house has striped wallpaper.")
 => END

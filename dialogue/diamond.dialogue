@@ -1,4 +1,5 @@
 ~ start
 You: Woah, the wallpaper here is an interesting pattern.
 You: Diamonds, huh… Better get out of here before they find me.
+do ClueManager.add_clue("In the middle is the house with the diamond wallpaper.")
 => END
