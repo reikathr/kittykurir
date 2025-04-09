@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://ctipyc2iafpy5"]
+[gd_scene load_steps=20 format=4 uid="uid://ctipyc2iafpy5"]
 
 [ext_resource type="TileSet" uid="uid://b3672u37khfk3" path="res://game_tileset.tres" id="1_7385i"]
 [ext_resource type="Script" path="res://scenes/World.gd" id="1_cyamk"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b4mg3telkyki4" path="res://entities/npcs/IceCreamBunny.tscn" id="10_dfbk7"]
 [ext_resource type="PackedScene" uid="uid://k7uhogglckql" path="res://entities/npcs/EggCat.tscn" id="12_io1s6"]
 [ext_resource type="PackedScene" uid="uid://dpnfidkt4a1ul" path="res://helper/Teleporter.tscn" id="12_j5cta"]
+[ext_resource type="PackedScene" uid="uid://ddwaw15pixvax" path="res://helper/EnterableTrigger.tscn" id="13_kka1a"]
 [ext_resource type="Resource" uid="uid://c8610nxmwu5mo" path="res://dialogue/fruitstreet.dialogue" id="13_yocqc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_omjlc"]
@@ -23,8 +24,11 @@ size = Vector2(20, 4)
 [sub_resource type="CircleShape2D" id="CircleShape2D_atac7"]
 radius = 9.05539
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdv2u"]
-size = Vector2(40, 23.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwr8j"]
+size = Vector2(80.5, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5ec5"]
+size = Vector2(32, 22)
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -134,10 +138,41 @@ teleportPosition = Vector2(160, 145)
 position = Vector2(858, 2)
 shape = SubResource("CircleShape2D_atac7")
 
-[node name="FruitStreet" parent="." instance=ExtResource("5_yovhl")]
-position = Vector2(502, 126)
+[node name="Enterable" parent="." instance=ExtResource("13_kka1a")]
+position = Vector2(512, 107)
+collision_layer = 1
+collision_mask = 1
 dialogue_resource = ExtResource("13_yocqc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FruitStreet"]
-position = Vector2(2, -38)
-shape = SubResource("RectangleShape2D_mdv2u")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enterable"]
+shape = SubResource("RectangleShape2D_pwr8j")
+
+[node name="Enterable2" parent="." instance=ExtResource("13_kka1a")]
+position = Vector2(507, -1)
+collision_layer = 1
+collision_mask = 1
+dialogue_resource = ExtResource("13_yocqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enterable2"]
+shape = SubResource("RectangleShape2D_pwr8j")
+
+[node name="Enterable3" parent="." instance=ExtResource("13_kka1a")]
+position = Vector2(1150, 107)
+collision_layer = 1
+collision_mask = 1
+dialogue_resource = ExtResource("13_yocqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enterable3"]
+shape = SubResource("RectangleShape2D_pwr8j")
+
+[node name="Enterable4" parent="." instance=ExtResource("13_kka1a")]
+position = Vector2(818, 159)
+collision_layer = 1
+collision_mask = 1
+dialogue_resource = ExtResource("13_yocqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enterable4"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_e5ec5")
+
+[editable path="Enterable4"]

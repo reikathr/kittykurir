@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddwaw15pixvax"]
+
+[ext_resource type="Script" path="res://helper/EnterableTrigger.gd" id="1_v7f8w"]
+
+[node name="Enterable" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_v7f8w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

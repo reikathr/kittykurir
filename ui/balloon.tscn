@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cewr5oxm3a7xp"]
+[gd_scene load_steps=12 format=3 uid="uid://cewr5oxm3a7xp"]
 
 [ext_resource type="Script" path="res://ui/balloon.gd" id="1_s2gbs"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hfvdi"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_1j1j0"]
+[ext_resource type="FontFile" uid="uid://dyie45y6gwtrn" path="res://assets/fonts/PixelOperator.ttf" id="3_id8g2"]
+[ext_resource type="FontFile" uid="uid://c0dcnbksg41lb" path="res://assets/fonts/PixelOperator-Bold.ttf" id="4_ugvn0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_235ry"]
 content_margin_left = 6.0
@@ -134,6 +136,8 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_id8g2")
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -143,6 +147,10 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_id8g2")
+theme_override_fonts/bold_font = ExtResource("4_ugvn0")
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
 text = "Dialogue..."
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
@@ -168,6 +176,8 @@ script = ExtResource("3_1j1j0")
 
 [node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_id8g2")
+theme_override_font_sizes/font_size = 12
 text = "Response Example"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]

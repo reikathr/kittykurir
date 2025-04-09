@@ -10,6 +10,7 @@ var hasMetGlenda = false
 var hasMetAlphaba = false
 var hasReunitedGalphie = false
 var hasReceivedGalphieClue = false
+var hasBeenToFruitStreet = false
 var next_teleport_position = Vector2.ZERO
 var should_teleport = false
 var isOpening = true
@@ -48,6 +49,9 @@ func set_has_received_galphie_clue(value):
 	
 func set_is_opening(value):
 	isOpening = value
+	
+func set_has_been_to_fruit_street(value):
+	hasBeenToFruitStreet = value
 	
 func record_npc_interaction(npc_name: String):
 	npc_interactions[npc_name] = npc_interactions.get(npc_name, 0) + 1
