@@ -1,23 +1,7 @@
 extends Node
 
-var clues: Array[String] = ["this is a clue",
-"here's another",
-"im crazy",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"this is the bottom"]
+var clues: Array[String] = []
+var selected_values := {}
 
 signal clue_added(clue: String)
 
@@ -26,3 +10,8 @@ func add_clue(clue: String):
 		clues.append(clue)
 		emit_signal("clue_added", clue)
 		print(clue)
+		
+func set_selection(category: String, house_index: int, value: String):
+	if not selected_values.has(category):
+		selected_values[category] = {}
+	selected_values[category][house_index] = value
