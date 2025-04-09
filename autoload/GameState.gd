@@ -1,16 +1,7 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
+var main_scene
+var world_holder
 var npc_interactions := {}
 var hasMetBlueCat = false
 var hasPickedUpGoldfish = false
@@ -29,6 +20,10 @@ signal picked_up_goldfish
 signal has_reunited_galphie
 signal clean_bunny
 signal clean_cat
+
+func register_main_scene(scene):
+	main_scene = scene
+	world_holder = main_scene.get_node("WorldHolder")
 
 func set_has_met_blue_cat(value):
 	hasMetBlueCat = value
@@ -60,6 +55,17 @@ func record_npc_interaction(npc_name: String):
 func get_npc_interaction_count(npc_name: String) -> int:
 	return npc_interactions.get(npc_name, 0)
 	
-func _on_teleport_to(sceneName : String, pos: Vector2):
-	GameState.next_teleport_position = pos
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/" + sceneName + ".tscn")
+func _on_teleport_to(scene_name: String, pos: Vector2):
+	main_scene = get_tree().current_scene
+	world_holder = main_scene.get_node("WorldHolder")
+	
+	for child in world_holder.get_children():
+		child.queue_free()
+
+	var new_scene = load("res://scenes/" + scene_name + ".tscn").instantiate()
+	world_holder.call_deferred("add_child", new_scene)
+
+	await get_tree().process_frame
+
+	var player = new_scene.get_node("Player")
+	player.position = pos

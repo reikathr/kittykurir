@@ -41,7 +41,7 @@ sources/0 = SubResource("TileSetAtlasSource_heqdu")
 radius = 11.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5u755"]
-size = Vector2(32, 37)
+size = Vector2(32, 40)
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_jfkiu")
@@ -74,5 +74,5 @@ sceneName = "World"
 teleportPosition = Vector2(88, 110)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter"]
-position = Vector2(160, 173.5)
+position = Vector2(160, 172)
 shape = SubResource("RectangleShape2D_5u755")

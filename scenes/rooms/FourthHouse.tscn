@@ -11,7 +11,7 @@
 size = Vector2(160, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ea2s"]
-size = Vector2(32, 27)
+size = Vector2(32, 34)
 
 [node name="FourthHouse" type="Node2D"]
 script = ExtResource("1_l1frp")
@@ -41,5 +41,5 @@ sceneName = "World"
 teleportPosition = Vector2(947, 106)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Teleporter"]
-position = Vector2(0, 20.5)
+position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_8ea2s")

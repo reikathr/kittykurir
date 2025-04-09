@@ -5,16 +5,6 @@ var clues: Array[String] = ["this is a clue",
 "im crazy",
 "debugging, dont mind me",
 "debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
-"debugging, dont mind me",
 "debugging, dont mind me"]
 
 signal clue_added(clue: String)

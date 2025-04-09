@@ -110,6 +110,7 @@ shape = SubResource("RectangleShape2D_husnt")
 [node name="TeleporterFirstHouse" parent="." instance=ExtResource("12_j5cta")]
 position = Vector2(88, 87)
 sceneName = "rooms/FirstHouse"
+teleportPosition = Vector2(160, 145)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleporterFirstHouse"]
 position = Vector2(522, 2)
@@ -118,6 +119,7 @@ shape = SubResource("CircleShape2D_atac7")
 [node name="TeleporterThirdHouse" parent="." instance=ExtResource("12_j5cta")]
 position = Vector2(88, 87)
 sceneName = "rooms/ThirdHouse"
+teleportPosition = Vector2(160, 145)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleporterThirdHouse"]
 position = Vector2(746, 2)
@@ -126,6 +128,7 @@ shape = SubResource("CircleShape2D_atac7")
 [node name="TeleporterFourthHouse" parent="." instance=ExtResource("12_j5cta")]
 position = Vector2(88, 87)
 sceneName = "rooms/FourthHouse"
+teleportPosition = Vector2(160, 145)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleporterFourthHouse"]
 position = Vector2(858, 2)

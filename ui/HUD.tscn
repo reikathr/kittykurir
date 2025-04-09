@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnf3mgp4o1sgt"]
+
+[ext_resource type="Script" path="res://ui/HUD.gd" id="1_jw8yc"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_jw8yc")
+
+[node name="ShowNotebookButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "here"
+
+[node name="NotebookContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="ShowNotebookButton" to="." method="_on_show_button_pressed"]
