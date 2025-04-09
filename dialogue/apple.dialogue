@@ -1,5 +1,5 @@
 ~ start
-You: Hi, there. My name is [name], I'm a mailcat but I'm playing a game right now and I could use your help! I—
+You: Hi, there. My name is {{GameState.playerName}}, I'm a mailcat but I'm playing a game right now and I could use your help! I—
 Apple: Whaddya need to know?
 You: Oh. Uh, mind introducing yourself?
 Apple: I'm too old to be telling a stranger my personal information!

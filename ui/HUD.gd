@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var notebook_container = $NotebookContainer
-@onready var show_button = $ShowNotebookButton
+@onready var show_button = $MarginContainer/ShowNotebookButton
 
 const OVERLAY_SCENE_PATH := "res://ui/Notebook.tscn"
 
@@ -11,7 +11,6 @@ func _ready():
 	pass
 
 func _on_show_button_pressed():
-	print('pressed')
 	if overlay_instance == null:
 		overlay_instance = load(OVERLAY_SCENE_PATH).instantiate()
 		overlay_instance.name = "OverlayUI"

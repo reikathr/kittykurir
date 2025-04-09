@@ -9,8 +9,8 @@ var dropdowns = {}
 
 var categories = {
 	"Name": ["Miyu", "Hiro", "Tomy", "Kei", "Hana"],
-	"Age": ["5", "6", "7", "8", "9"],
-	"House Pattern": ["Stripes", "Polkadot", "Diamonds", "Chevron", "Checkers"],
+	"Age": ["10", "11", "12", "13", "14"],
+	"Wallpaper": ["Stripes", "Polkadot", "Diamonds", "Chevron", "Checkers"],
 	"Parents": ["Jin", "Leo", "Ken", "Rin", "Mia"],
 	"Fruit": ["Strawberry", "Apple", "Tomato", "Banana", "Watermelon"],
 	"Gift": ["Blocks", "Dolls", "Console", "Science Kit", "Drawing Set"]

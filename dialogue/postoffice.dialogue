@@ -12,14 +12,16 @@ if GameState.isOpening:
 	Post office guy: We know which packages contain what, but we don't know which belongs to who and where to deliver them to!
 	Post office guy: Thanks a lot, Gerald.
 	Gerald is in the corner of the room, seemingly being punished. Poor guy.
-	Post office guy: If you wanna keep your job, get these packages to their rightful recipients WITH the proper labels.
-	Post office guy: They're all gifts for the kids in town, we don't want their parents getting nasty at us.
-	You: Uh, if you don't mind me asking, how am I supposed to do that?
-	Post office guy: First of all, I do mind. Second, don't you have a notebook or something? Figure it out! Can't be too hard, [b]everyone in this town is unique.[/b]
-	Post office guy: If I get a single complaint, it's over for Gerald AND for you! Understood?
+	Post office guy: If you wanna keep your job, you have to retrieve all necessary information for us to label the packages properly.
+	Post office guy: Here's a notebook for it. Fill out everything in the table, and bring it back by the end of the day.
+	Post office guy: We'll label the packages with the information you've collected and you can send the packages off to their recipients.
+	Post office guy: If I get a single complaint, you and Gerald can say goodbye to your jobs.
 	You: Meow…
 	do GameState.set_is_opening(false)
 else:
 	Post office guy: You better be done...
-	You: (I better leave...)
+	- I am
+		Post office guy: Oh, yeah? Let us see then.
+	- (Nope)
+		You: (I better leave...)
 => END
