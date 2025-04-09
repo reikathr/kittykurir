@@ -57,9 +57,8 @@ func _ready():
 
 func _build_dropdown(category: String, house_index: int) -> OptionButton:
 	var dropdown = OptionButton.new()
-	dropdown.custom_minimum_size = Vector2(50, 10)
+	dropdown.custom_minimum_size = Vector2(48, 10)
 	dropdown.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	dropdown.theme = custom_theme
 	dropdown.clip_text = true
 
 	dropdown.add_item("")
@@ -131,16 +130,7 @@ func _build_dropdown_theme() -> Theme:
 
 	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
 		theme.set_stylebox(state, "OptionButton", flat)
-
-	var popup_style := StyleBoxFlat.new()
-	popup_style.bg_color = Color("#1e1e1e")
-	popup_style.set_border_width_all(0)
-	popup_style.content_margin_top = 2
-	popup_style.content_margin_bottom = 2
-	popup_style.content_margin_left = 4
-	popup_style.content_margin_right = 4
-
-	theme.set_stylebox("panel", "PopupMenu", popup_style)
+		
 	theme.set_font("font", "PopupMenu", font)
 	theme.set_font_size("font_size", "PopupMenu", 12)
 

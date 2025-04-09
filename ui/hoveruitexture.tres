@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cnni3f6yjydju"]
+
+[ext_resource type="Texture2D" uid="uid://dytextaxvs4wl" path="res://assets/althoveruii.png" id="1_2ibux"]
+
+[resource]
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 3.0
+content_margin_bottom = 1.0
+texture = ExtResource("1_2ibux")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
