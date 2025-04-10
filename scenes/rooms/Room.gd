@@ -17,7 +17,7 @@ func switch_camera():
 		var camera = Camera2D.new()
 		camera.name = "MySceneCamera"
 		camera.anchor_mode = Camera2D.ANCHOR_MODE_FIXED_TOP_LEFT
-		camera.position = Vector2(1, 0)
+		camera.position = Vector2(0, 0)
 		camera.zoom = Vector2(1, 1)
 		camera.position_smoothing_enabled = false
 		camera.drag_horizontal_enabled = false
