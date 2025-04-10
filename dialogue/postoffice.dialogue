@@ -8,7 +8,7 @@ if GameState.isOpening:
 	do GameState.wait_for_name_input()
 	Post office guy: Okay, {{GameState.playerName}}, get over here.
 	You: What's the situation, sir?
-	Post office guy: Our other new recruit messed up the labels on the packages headed to [b]Fruit Street[/b]. Messed up, as in completely forgot them. Scrambled up the info, too. 
+	Post office guy: Our other new recruit messed up the labels on the packages headed to the kids at [b]Fruit Street[/b]. Messed up, as in completely forgot them. Scrambled up the info, too. 
 	Post office guy: We know which packages contain what, but we don't know which belongs to who and where to deliver them to!
 	Post office guy: Thanks a lot, Gerald.
 	Gerald is in the corner of the room, seemingly being punished. Poor guy.
@@ -30,13 +30,13 @@ else:
 		do GameState.wait_for_notebook_submit()
 		if GameState.isValidationDone:
 			if GameState.submissionResult == "All answers correct!":
-				Post office guy: Not shabby, eh. You and Gerald get to keep your job for today.
+				Post office guy: Not too shabby, eh. You and Gerald get to keep your jobs for today.
 				Post office guy: Keep up the good work. Maybe I'll let you send the packages next time.
-				You:(Pretty sure that's what couriers are supposed to do.) Thanks, boss.
+				You: (Pretty sure that's what couriers are supposed to do...)
+				You: Thanks, boss.
 				do GameState.win.emit()
 			else:
-				Post office guy: I got complaints from the parents, those packages were gifts for the kids.
-				Post office guy: Disappointing! We're letting go of you AND Gerald.
+				Post office guy: I got complaints from the parents. Disappointing! We're letting go of you AND Gerald.
 				Gerald: Thanks a lot...
 				You: (Isn't this his fault to begin with...?)
 				do GameState.lose.emit()
