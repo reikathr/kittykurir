@@ -7,6 +7,9 @@ func _ready():
 	input.grab_focus()
 
 func _on_submit_button_pressed():
-	GameState.playerName = input.text
+	if input.text == "":
+		GameState.playerName = "Hachi"
+	else:
+		GameState.playerName = input.text
 	GameState.name_input_closed.emit()
 	queue_free()
