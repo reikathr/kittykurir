@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var notebook_container = $NotebookContainer
 @onready var show_button = $MarginContainer/ShowNotebookButton
+@onready var timer_label = $MarginContainer/TimerLabel
 
 const OVERLAY_SCENE_PATH := "res://ui/Notebook.tscn"
 const NAME_INPUT_OVERLAY := "res://ui/NameInput.tscn"
@@ -15,6 +16,9 @@ func _ready():
 	GameState.connect("notebook_closed", self._show_notebook_button)
 	GameState.connect("name_input_closed", self._show_notebook_button)
 	show_button.pressed.connect(_on_show_button_pressed)
+	
+func _process(delta):
+	timer_label.text = "Time elapsed: %s" % TimeManager.get_formatted_time()
 
 func _on_show_button_pressed():
 	show_notebook()
@@ -28,6 +32,7 @@ func show_notebook():
 	else:
 		notebook_overlay.visible = not notebook_overlay.visible
 	show_button.visible = not notebook_container.visible
+	timer_label.visible = not notebook_container.visible
 
 func _on_show_name_input():
 	if name_input_overlay == null:
@@ -38,9 +43,11 @@ func _on_show_name_input():
 	else:
 		name_input_overlay.visible = not name_input_overlay.visible
 	show_button.visible = not notebook_container.visible
+	timer_label.visible = not notebook_container.visible
 
 func _on_show_notebook():
 	show_notebook()
 
 func _show_notebook_button():
 	show_button.visible = true
+	timer_label.visible = true

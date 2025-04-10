@@ -17,6 +17,9 @@ var isCleanBunny = false
 var isCleanCat = false
 var isOpening = true
 var playerName = "Hachi"
+var submissionResult = "FIll in the blanks."
+var check_counter = 3
+var isValidationDone = false
 
 signal met_blue_cat
 signal picked_up_goldfish
@@ -29,6 +32,9 @@ signal notebook_submit
 signal name_input_open
 signal name_input_closed
 signal enable_submit
+signal validation_done
+signal win
+signal lose
 
 func register_main_scene(scene):
 	main_scene = scene
@@ -74,6 +80,7 @@ func wait_for_notebook():
 func wait_for_notebook_submit():
 	emit_signal("notebook_open")
 	emit_signal("enable_submit")
+	await notebook_closed
 	
 func wait_for_name_input():
 	emit_signal("name_input_open")
@@ -99,3 +106,25 @@ func _on_teleport_to(scene_name: String, pos: Vector2):
 
 	var player = new_scene.get_node("Player")
 	player.position = pos
+	
+func reset():
+	main_scene = null
+	world_holder = null
+	npc_interactions.clear()
+	hasMetBlueCat = false
+	hasPickedUpGoldfish = false
+	blueCatDone = false
+	hasMetGlenda = false
+	hasMetAlphaba = false
+	hasReunitedGalphie = false
+	hasReceivedGalphieClue = false
+	hasBeenToFruitStreet = false
+	next_teleport_position = Vector2.ZERO
+	should_teleport = false
+	isCleanBunny = false
+	isCleanCat = false
+	isOpening = true
+	playerName = "Hachi"
+	submissionResult = "Fill in the blanks."
+	check_counter = 3
+	isValidationDone = false

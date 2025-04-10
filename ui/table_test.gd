@@ -6,6 +6,7 @@ extends Control
 var custom_font : Font
 var custom_theme : Theme
 var dropdowns = {}
+var hint_button = Button.new()
 
 var categories = {
 	"Name": ["Tomy", "Hana", "Miyu", "Kei", "Hiro"],
@@ -143,11 +144,30 @@ func _build_dropdown_theme() -> Theme:
 	return theme
 
 func _on_enable_submit():
+	if GameState.check_counter > 0:
+		hint_button.text = "Check (%d left)" % GameState.check_counter
+		hint_button.add_theme_font_override("font", custom_font)
+		hint_button.pressed.connect(self._on_hint_pressed)
+		$ScrollContainer/VBoxContainer.add_child(hint_button)
 	var submit_button = Button.new()
 	submit_button.text = "Submit"
 	submit_button.add_theme_font_override("font", custom_font)
-	submit_button.pressed.connect(ClueManager.validate_answers)
+	submit_button.pressed.connect(self._on_submit_pressed)
 	$ScrollContainer/VBoxContainer.add_child(submit_button)
+	
+func _on_submit_pressed():
+	var result = ClueManager.validate_answers()
+	GameState.validation_done.emit()
+	
+func _on_hint_pressed():
+	GameState.check_counter -= 1
+	if GameState.check_counter == 0:
+		hint_button.button_pressed = false
+		hint_button.disabled = true
+		hint_button.text = "No hints left"
+	else:
+		hint_button.text = "Check (%d left)" % GameState.check_counter
+	var result = ClueManager.validate_answers()
 	
 func _on_empty_fields(empty_fields: Array):
 	_highlight_fields(empty_fields, Color("#ff4c4c"))

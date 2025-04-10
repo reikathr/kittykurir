@@ -18,12 +18,25 @@ if GameState.isOpening:
 	Post office guy: We'll label the packages with the information you've collected and you can send the packages off to their recipients.
 	Post office guy: If I get a single complaint, you and Gerald can say goodbye to your jobs.
 	You: Meow…
+	do TimeManager.set_counting(true)
 	do GameState.set_is_opening(false)
 else:
 	Post office guy: You better be done...
 	- I am
 		Post office guy: Oh, yeah? Let us see then.
 		do GameState.wait_for_notebook_submit()
+		if GameState.isValidationDone:
+			if GameState.submissionResult == "All answers correct!":
+				Post office guy: Not shabby, eh. You and Gerald get to keep your job for today. Keep up the good work.
+				do GameState.win.emit()
+			else:
+				Post office guy: Disappointing. We're letting go of you AND Gerald.
+				Gerald: Thanks a lot...
+				You: (Isn't this his fault to begin with...?)
+				do GameState.lose.emit()
+		else:
+			You: Err... I'll think about it again.
+			Post office guy: You better.
 	- (Nope)
 		You: (I better leave...)
 => END

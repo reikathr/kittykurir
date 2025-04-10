@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://br6vcqmyi30wk"]
+
+[ext_resource type="Texture2D" uid="uid://ca0vm448sbtwf" path="res://assets/losescreen.png" id="1_jn7ru"]
+[ext_resource type="Script" path="res://scenes/LoseScreen.gd" id="2_813cf"]
+[ext_resource type="Theme" uid="uid://b4adhnb1380ip" path="res://ui/dialogue_theme.tres" id="3_3ljrd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rehi4"]
+texture = ExtResource("1_jn7ru")
+
+[node name="LoseScreen" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rehi4")
+script = ExtResource("2_813cf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_top = 74.0
+offset_right = 320.0
+offset_bottom = 180.0
+theme = ExtResource("3_3ljrd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(85, 10)
+layout_mode = 2
+text = "Back to Main Menu"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Exit Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

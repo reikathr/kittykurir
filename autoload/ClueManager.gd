@@ -28,6 +28,7 @@ func set_selection(category: String, house_index: int, value: String):
 	selected_values[category][house_index] = value
 	
 func validate_answers() -> bool:
+	GameState.submissionResult = ""
 	var all_filled := true
 	var all_correct := true
 
@@ -59,12 +60,18 @@ func validate_answers() -> bool:
 				all_correct = false
 
 	if not all_filled:
-		print("Some fields are empty.")
 		emit_signal("empty_field", empty_fields)
+		GameState.submissionResult += "Some fields are still empty. "
 	if not all_correct:
-		print("Some answers are incorrect.")
 		emit_signal("wrong_answer", incorrect_fields)
+		GameState.submissionResult += "Some fields are still wrong. "
 	if all_correct and all_filled:
-		print("All answers correct!")
+		TimeManager.counting = false
+		GameState.submissionResult = "All answers correct!"
 
 	return all_correct and all_filled
+
+func reset():
+	clues.clear()
+	selected_values.clear()
+	GameState.submissionResult = ""
