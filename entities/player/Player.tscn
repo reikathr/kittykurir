@@ -220,10 +220,10 @@ shape = SubResource("CircleShape2D_gybe0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-8, -6)
 sprite_frames = SubResource("SpriteFrames_8sm1u")
-animation = &"walk_back"
+animation = &"idle_back"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -128
+limit_left = -112
 limit_top = -160
 limit_right = 1424
 limit_bottom = 608

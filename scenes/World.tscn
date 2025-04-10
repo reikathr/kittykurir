@@ -25,7 +25,7 @@ size = Vector2(20, 4)
 radius = 9.05539
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pwr8j"]
-size = Vector2(80.5, 67)
+size = Vector2(73.25, 53.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5ec5"]
 size = Vector2(32, 22)
@@ -145,15 +145,7 @@ collision_mask = 1
 dialogue_resource = ExtResource("13_yocqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enterable"]
-shape = SubResource("RectangleShape2D_pwr8j")
-
-[node name="Enterable2" parent="." instance=ExtResource("13_kka1a")]
-position = Vector2(507, -1)
-collision_layer = 1
-collision_mask = 1
-dialogue_resource = ExtResource("13_yocqc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enterable2"]
+position = Vector2(3.625, 0)
 shape = SubResource("RectangleShape2D_pwr8j")
 
 [node name="Enterable3" parent="." instance=ExtResource("13_kka1a")]
@@ -163,6 +155,7 @@ collision_mask = 1
 dialogue_resource = ExtResource("13_yocqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enterable3"]
+position = Vector2(-49, 7)
 shape = SubResource("RectangleShape2D_pwr8j")
 
 [node name="Enterable4" parent="." instance=ExtResource("13_kka1a")]

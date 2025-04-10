@@ -23,6 +23,12 @@ signal picked_up_goldfish
 signal has_reunited_galphie
 signal clean_bunny
 signal clean_cat
+signal notebook_open
+signal notebook_closed
+signal notebook_submit
+signal name_input_open
+signal name_input_closed
+signal enable_submit
 
 func register_main_scene(scene):
 	main_scene = scene
@@ -60,6 +66,18 @@ func set_is_clean_bunny(value):
 	
 func set_is_clean_cat(value):
 	isCleanCat = value
+
+func wait_for_notebook():
+	emit_signal("notebook_open")
+	await notebook_closed
+	
+func wait_for_notebook_submit():
+	emit_signal("notebook_open")
+	emit_signal("enable_submit")
+	
+func wait_for_name_input():
+	emit_signal("name_input_open")
+	await name_input_closed
 	
 func record_npc_interaction(npc_name: String):
 	npc_interactions[npc_name] = npc_interactions.get(npc_name, 0) + 1

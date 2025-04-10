@@ -4,5 +4,6 @@ extends Control
 
 func _ready():
 	close_button.pressed.connect(func():
+		GameState.notebook_closed.emit()
 		queue_free()
 	)

@@ -5,7 +5,7 @@ if GameState.isOpening:
 	Post office guy: Does it matter right now? Come over here.
 	You: …
 	Post office guy: Alright, alright, what's your name?
-	You: {{GameState.playerName}}
+	do GameState.wait_for_name_input()
 	Post office guy: Okay, {{GameState.playerName}}, get over here.
 	You: What's the situation, sir?
 	Post office guy: Our other new recruit messed up the labels on the packages. Messed up, as in completely forgot them. Scrambled up the info, too. 
@@ -14,6 +14,7 @@ if GameState.isOpening:
 	Gerald is in the corner of the room, seemingly being punished. Poor guy.
 	Post office guy: If you wanna keep your job, you have to retrieve all necessary information for us to label the packages properly.
 	Post office guy: Here's a notebook for it. Fill out everything in the table, and bring it back by the end of the day.
+	do GameState.wait_for_notebook()
 	Post office guy: We'll label the packages with the information you've collected and you can send the packages off to their recipients.
 	Post office guy: If I get a single complaint, you and Gerald can say goodbye to your jobs.
 	You: Meow…
@@ -22,6 +23,7 @@ else:
 	Post office guy: You better be done...
 	- I am
 		Post office guy: Oh, yeah? Let us see then.
+		do GameState.wait_for_notebook_submit()
 	- (Nope)
 		You: (I better leave...)
 => END

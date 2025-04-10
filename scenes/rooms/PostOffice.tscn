@@ -38,7 +38,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_heqdu")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o3qv1"]
-radius = 11.0
+radius = 30.0666
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5u755"]
 size = Vector2(32, 40)
@@ -51,23 +51,24 @@ tile_map_data = PackedByteArray("AAADAAMAAAABAAIAAAADAAQAAAABAAMAAAADAAUAAAABAAM
 tile_set = SubResource("TileSet_ftupq")
 
 [node name="PostOfficeGuy" parent="." instance=ExtResource("2_oh82p")]
-position = Vector2(75, 83)
+position = Vector2(69, 68)
 
 [node name="Actionable" parent="PostOfficeGuy" instance=ExtResource("4_srh50")]
 dialogue_resource = ExtResource("5_a6345")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PostOfficeGuy/Actionable"]
+position = Vector2(1, 7)
 shape = SubResource("CircleShape2D_o3qv1")
 
 [node name="Gerald" parent="." instance=ExtResource("3_gchde")]
 position = Vector2(261, 69)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAFAAIAAQAFAAQAAAAIAAIAAQAFAAQAAAALAAIAAQAFAAQAAAAOAAIAAQAFAAQAAAADAAYAAQACAAQAAAAEAAYAAQACAAQAAAAFAAYAAQACAAQAAAAGAAYAAQACAAQAAAAHAAYAAQACAAQAAAAIAAYAAQACAAQAAAAIAAUAAQACAAQAAAA=")
+tile_map_data = PackedByteArray("AAAFAAIAAQAFAAQAAAAIAAIAAQAFAAQAAAALAAIAAQAFAAQAAAAOAAIAAQAFAAQAAAAIAAUAAQACAAQAAAADAAUAAQACAAQAAAAEAAUAAQACAAQAAAAFAAUAAQACAAQAAAAGAAUAAQACAAQAAAAHAAUAAQACAAQAAAAIAAQAAQACAAQAAAA=")
 tile_set = ExtResource("3_nqtrp")
 
 [node name="Player" parent="." instance=ExtResource("2_45gjc")]
-position = Vector2(160, 137)
+position = Vector2(70, 102)
 
 [node name="Teleporter" parent="." instance=ExtResource("6_q3js0")]
 sceneName = "World"

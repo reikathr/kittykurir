@@ -1,8 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr2ppdr0agxd6"]
+[gd_scene load_steps=4 format=3 uid="uid://dr2ppdr0agxd6"]
 
 [ext_resource type="Script" path="res://helper/Actionable.gd" id="1_7t3be"]
+[ext_resource type="Theme" uid="uid://b4adhnb1380ip" path="res://ui/dialogue_theme.tres" id="2_kg7ax"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o5dco"]
+line_spacing = 0.0
+font_size = 4
+font_color = Color(0, 0, 0, 1)
 
 [node name="Actionable" type="Area2D"]
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_7t3be")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(20, 8)
+offset_left = -27.0
+offset_top = -14.0
+offset_right = -4.0
+offset_bottom = -5.0
+theme = ExtResource("2_kg7ax")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+theme = ExtResource("2_kg7ax")
+theme_override_font_sizes/font_size = 6
+text = "Alphaba"
+label_settings = SubResource("LabelSettings_o5dco")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

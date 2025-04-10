@@ -1,9 +1,14 @@
 extends Node2D
 
 @onready var playerCamera = $Player/Camera2D
+@onready var dialogue = preload("res://dialogue/postoffice.dialogue")
 
 func _ready():
 	switch_camera()
+	var scene_path = get_scene_file_path()
+	var scene_name = scene_path.get_file().get_basename()
+	if (GameState.isOpening) and (scene_name == "PostOffice"):
+		DialogueManager.show_dialogue_balloon(dialogue, "start")
 
 func switch_camera():
 	playerCamera.enabled = false

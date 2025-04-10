@@ -43,9 +43,21 @@ theme_override_font_sizes/font_size = 12
 text = "Notebook"
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tvcle")
+theme_override_font_sizes/font_size = 9
+text = "Table"
+
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 columns = 6
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tvcle")
+theme_override_font_sizes/font_size = 9
+text = "Clues"
 
 [node name="ClueBox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
 clip_contents = true

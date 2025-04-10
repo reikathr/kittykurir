@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3i2tvqemco01"]
+
+[ext_resource type="Theme" uid="uid://b4adhnb1380ip" path="res://ui/dialogue_theme.tres" id="1_gmc10"]
+[ext_resource type="Texture2D" uid="uid://cykbi6dfk6ee2" path="res://assets/mainmenu.png" id="2_bpcc0"]
+[ext_resource type="Script" path="res://scenes/MainMenu.gd" id="3_j1ppt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjo3o"]
+texture = ExtResource("2_bpcc0")
+
+[node name="MainMenu" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gmc10")
+theme_override_styles/panel = SubResource("StyleBoxTexture_kjo3o")
+script = ExtResource("3_j1ppt")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 48.0
+offset_right = 314.0
+offset_bottom = 174.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "KITTYKURIR"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Start Game"
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

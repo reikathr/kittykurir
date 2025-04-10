@@ -23,6 +23,7 @@ texture = SubResource("AtlasTexture_eoo0q")
 
 [node name="Actionable" parent="." instance=ExtResource("2_1qrl8")]
 dialogue_resource = ExtResource("3_rk1p2")
+dialogue_name = "Grumpy Bird"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 shape = SubResource("CircleShape2D_mhiv4")

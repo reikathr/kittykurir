@@ -26,6 +26,7 @@ texture = SubResource("AtlasTexture_eoo0q")
 
 [node name="Actionable" parent="." instance=ExtResource("2_jw678")]
 dialogue_resource = ExtResource("3_prpow")
+dialogue_name = "Alphaba"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
 position = Vector2(0, -1)

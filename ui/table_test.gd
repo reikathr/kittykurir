@@ -8,16 +8,20 @@ var custom_theme : Theme
 var dropdowns = {}
 
 var categories = {
-	"Name": ["Miyu", "Hiro", "Tomy", "Kei", "Hana"],
+	"Name": ["Tomy", "Hana", "Miyu", "Kei", "Hiro"],
 	"Age": ["10", "11", "12", "13", "14"],
-	"Wallpaper": ["Stripes", "Polkadot", "Diamonds", "Chevron", "Checkers"],
-	"Parents": ["Jin", "Leo", "Ken", "Rin", "Mia"],
-	"Fruit": ["Strawberry", "Apple", "Tomato", "Banana", "Watermelon"],
-	"Gift": ["Blocks", "Dolls", "Console", "Science Kit", "Drawing Set"]
+	"Wallpaper": ["Polkadot", "Checkers", "Chevron", "Stripes", "Diamonds"],
+	"Parents": ["Leo", "Mia", "Jin", "Rin", "Ken"],
+	"Fruit": ["Tomato", "Apple", "Banana", "Strawberry", "Watermelon"],
+	"Gift": ["Dolls", "Blocks", "Drawing Set", "Console", "Science Kit"]
 }
 
 func _ready():
 	ClueManager.connect("clue_added", self.show_clue)
+	GameState.connect("enable_submit", self._on_enable_submit)
+	ClueManager.connect("empty_field", self._on_empty_fields)
+	ClueManager.connect("wrong_answer", self._on_wrong_answers)
+
 
 	grid.columns = 6
 	grid.custom_minimum_size = Vector2(30, 0)
@@ -71,6 +75,8 @@ func _build_dropdown(category: String, house_index: int) -> OptionButton:
 
 
 func _on_dropdown_selected(index: int, category: String, house_index: int, changed_dropdown: OptionButton):
+	changed_dropdown.modulate = Color(1, 1, 1)
+
 	var selected_value = changed_dropdown.get_item_text(index)
 	var previous_value = ClueManager.selected_values.get(category, {}).get(house_index, "")
 
@@ -106,7 +112,7 @@ func show_clue(clue_text: String):
 	var clue_label = Label.new()
 	clue_label.text = clue_text
 	clue_label.add_theme_font_override("font", custom_font)
-	clue_label.add_theme_font_size_override("font_size", 7)
+	clue_label.add_theme_font_size_override("font_size", 8)
 	clue_label.autowrap_mode = TextServer.AUTOWRAP_WORD
 	clue_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	clue_box.add_child(clue_label)
@@ -135,3 +141,24 @@ func _build_dropdown_theme() -> Theme:
 	theme.set_font_size("font_size", "PopupMenu", 12)
 
 	return theme
+
+func _on_enable_submit():
+	var submit_button = Button.new()
+	submit_button.text = "Submit"
+	submit_button.add_theme_font_override("font", custom_font)
+	submit_button.pressed.connect(ClueManager.validate_answers)
+	$ScrollContainer/VBoxContainer.add_child(submit_button)
+	
+func _on_empty_fields(empty_fields: Array):
+	_highlight_fields(empty_fields, Color("#ff4c4c"))
+
+func _on_wrong_answers(wrong_fields: Array):
+	_highlight_fields(wrong_fields, Color("#ffaaaa"))
+
+func _highlight_fields(fields: Array, color: Color):
+	for entry in fields:
+		var category = entry["category"]
+		var index = entry["index"]
+		if dropdowns.has(category):
+			var dropdown = dropdowns[category][index]
+			dropdown.modulate = color
