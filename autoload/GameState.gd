@@ -20,6 +20,7 @@ var playerName = "Hachi"
 var submissionResult = "FIll in the blanks."
 var check_counter = 3
 var isValidationDone = false
+var disablePlayerMovement = true
 
 signal met_blue_cat
 signal picked_up_goldfish

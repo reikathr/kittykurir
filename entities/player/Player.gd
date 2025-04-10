@@ -3,9 +3,20 @@ extends CharacterBody2D
 @export var speed := 100.0
 @onready var anim := $AnimatedSprite2D
 @onready var actionable_finder := $ActionableFinder
+@onready var disable_movement = false
 
-var last_direction := Vector2.DOWN
+var last_direction := Vector2.UP
 var axis : int
+
+func _ready():
+	DialogueManager.connect("dialogue_started", self._on_dialogue_started)
+	DialogueManager.connect("dialogue_ended", self._on_dialogue_ended)
+	
+func _on_dialogue_started(_resource):
+	disable_movement = true
+	
+func _on_dialogue_ended(_resource):
+	disable_movement = false
 	
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -15,15 +26,17 @@ func _unhandled_input(event):
 			return
 
 func _physics_process(delta):
-		
-	var input_vector = Vector2(
-		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	).normalized()
+	var input_vector = Vector2.ZERO
+
+	if not disable_movement:
+		input_vector = Vector2(
+			Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+			Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		).normalized()
 	
 	velocity = input_vector * speed
 	move_and_slide()
-
+	
 	update_animation(input_vector)
 	update_actionable_finder()
 
