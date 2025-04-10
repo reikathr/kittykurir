@@ -9,6 +9,6 @@ You: I'm delivering mail. Do you know anything about the kids in this street?
 Pineapple: Hm. All I know is there's a 14 year old that lives to the right of Kei's house. You know Kei, right?
 You: I'm not sure I do.
 Pineapple: Sucks to be you.
-You: (Why are so many of them mean to me?)
+You: (That was weird.)
 do ClueManager.add_clue("The 14-year-old lives somewhere to the right of Kei's house.")
 => END

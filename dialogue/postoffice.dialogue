@@ -8,17 +8,18 @@ if GameState.isOpening:
 	do GameState.wait_for_name_input()
 	Post office guy: Okay, {{GameState.playerName}}, get over here.
 	You: What's the situation, sir?
-	Post office guy: Our other new recruit messed up the labels on the packages. Messed up, as in completely forgot them. Scrambled up the info, too. 
+	Post office guy: Our other new recruit messed up the labels on the packages headed to [b]Fruit Street[/b]. Messed up, as in completely forgot them. Scrambled up the info, too. 
 	Post office guy: We know which packages contain what, but we don't know which belongs to who and where to deliver them to!
 	Post office guy: Thanks a lot, Gerald.
 	Gerald is in the corner of the room, seemingly being punished. Poor guy.
 	Post office guy: If you wanna keep your job, you have to retrieve all necessary information for us to label the packages properly.
 	Post office guy: Shouldn't be too hard, [b]everyone in this town is unique[/b].
 	do ClueManager.add_clue("Everyone in town is unique.")
-	Post office guy: Here's a notebook for it. Fill out everything in the table, and bring it back by the end of the day.
+	Post office guy: Here's a notebook for it.
 	do GameState.wait_for_notebook()
+	Post office guy: After you talk to the people, check the notebook. Fill out everything in the table, and bring it back by the end of the day.
 	Post office guy: We'll label the packages with the information you've collected. You have three opportunies to get hints for your answers.
-	Post office guy: Once you run out, we'll make the labels. If I get a single complaint, you and Gerald can say goodbye to your jobs.
+	Post office guy: Once you run out, we'll make the labels and send them off. If I get a single complaint, you and Gerald can say goodbye to your jobs.
 	You: Meow…
 	do TimeManager.set_counting(true)
 	do GameState.set_is_opening(false)
@@ -29,10 +30,13 @@ else:
 		do GameState.wait_for_notebook_submit()
 		if GameState.isValidationDone:
 			if GameState.submissionResult == "All answers correct!":
-				Post office guy: Not shabby, eh. You and Gerald get to keep your job for today. Keep up the good work.
+				Post office guy: Not shabby, eh. You and Gerald get to keep your job for today.
+				Post office guy: Keep up the good work. Maybe I'll let you send the packages next time.
+				You:(Pretty sure that's what couriers are supposed to do.) Thanks, boss.
 				do GameState.win.emit()
 			else:
-				Post office guy: I got complaints from the parents. Disappointing. We're letting go of you AND Gerald.
+				Post office guy: I got complaints from the parents, those packages were gifts for the kids.
+				Post office guy: Disappointing! We're letting go of you AND Gerald.
 				Gerald: Thanks a lot...
 				You: (Isn't this his fault to begin with...?)
 				do GameState.lose.emit()
