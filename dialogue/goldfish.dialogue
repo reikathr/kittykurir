@@ -2,10 +2,10 @@
 You: A goldfish?
 Goldfish: How can you tell if a pufferfish has had too much salt for dinner?
 You: ?
-Goldfish: It would look... [i]blow-ted[/i].
+Goldfish: It would look... [b]blow-ted[/b].
 You: ...
-Goldfish: If you think of a [i]betta[/i] pun, let me know...
-You: Huh... orange and questionably funny...
+Goldfish: If you think of a [b]betta[/b] pun, let me know...
+You: Huh... orange and questionably funny... Better reunite him with his friend.
 do GameState.set_has_picked_up_goldfish(true)
 do GameState.picked_up_goldfish.emit()
 => END

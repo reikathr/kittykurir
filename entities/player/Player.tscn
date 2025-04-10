@@ -211,6 +211,7 @@ animations = [{
 radius = 9.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 17
 script = ExtResource("1_tvlyn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

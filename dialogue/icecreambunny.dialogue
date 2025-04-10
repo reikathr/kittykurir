@@ -1,19 +1,23 @@
 ~ start
-You: Good morning.
-Bunny: What's so good about this morning? That annoying cat crashed into me. Now my breakfast is gone and there's ice cream on my head.
-- Help 'em
-	You: Oh, um, want me to help you with that?
-	Bunny: Hmph…
-	Bunny: Yes, please…
-	You: Got it.
-	do GameState.clean_bunny.emit()
-	Bunny: Phew, is there any way I can thank you?
-	You: Do you know anything about the kids at Fruit Street?
-	Bunny: I can't say I know much about the kids, but I know one of their parents. I work with Rin, she owns the fourth house.
-	You: Thanks!
-	Bunny: Just repaying a favor.
-	do ClueManager.add_clue("Rin is the parent that owns the fourth house.")
-- Don't help
-	You: See you..
-	Bunny: Hmph.
+if !GameState.isCleanBunny:
+	You: Good morning.
+	Bunny: What's so good about this morning? That annoying cat crashed into me. Now my breakfast is gone and there's ice cream on my head.
+	- Help 'em
+		You: Oh, um, want me to help you with that?
+		Bunny: Hmph…
+		Bunny: Yes, please…
+		You: Got it.
+		do GameState.clean_bunny.emit()
+		Bunny: Phew, is there any way I can thank you?
+		You: Do you know anything about the kids at Fruit Street?
+		Bunny: I can't say I know much about the kids, but I know one of their parents. I work with Rin, she owns the fourth house.
+		You: Thanks!
+		Bunny: Just repaying a favor.
+		do ClueManager.add_clue("Rin is the parent that owns the fourth house.")
+	- Don't help
+		You: See you..
+		Bunny: Hmph.
+else:
+	Bunny: Thanks for helping me!
+	You: Yep, no problem.
 => END

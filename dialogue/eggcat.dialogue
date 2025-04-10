@@ -1,19 +1,23 @@
 ~ start
-You: Hey there.
-Cat: …
-You: …
-Cat: You must be wondering why I have an egg on my head.
-You: Uh… meow.
-Cat: I don't wanna talk about it. Can you get it off of me?
-- Help him
-	do GameState.clean_cat.emit()
-	Cat: Thank you! What do you want to know, little mailcat?
-	You: Do you know anything about the kids over at Fruit Street?
-	Cat: I can't say I know much, but I do know that the kid in the second house loves dolls.
-	Cat: She got them during the town gift exchange and was super happy about it.
-	You: Thanks!
-	Cat: Isn't it weird that we're both cats?
-	do ClueManager.add_clue("The kid who loves dolls lives in the second house.")
-- Leave him
-	Cat: No help? Really?
+if !GameState.isCleanCat:
+	You: Hey there.
+	Cat: …
+	You: …
+	Cat: You must be wondering why I have an egg on my head.
+	You: Uh… meow.
+	Cat: I don't wanna talk about it. Can you get it off of me?
+	- Help him
+		do GameState.clean_cat.emit()
+		Cat: Thank you! What do you want to know, little mailcat?
+		You: Do you know anything about the kids over at Fruit Street?
+		Cat: I can't say I know much, but I do know that the kid in the second house loves dolls.
+		Cat: She got them during the town gift exchange and was super happy about it.
+		You: Thanks!
+		Cat: Isn't it weird that we're both cats?
+		do ClueManager.add_clue("The kid who loves dolls lives in the second house.")
+	- Leave him
+		Cat: No help? Really?
+else:
+	Cat: Hi! Thanks for earlier.
+	You: No problem.
 => END

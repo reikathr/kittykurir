@@ -73,6 +73,7 @@ tile_set = ExtResource("2_ii3lx")
 [node name="MailBoxAreas" type="Node2D" parent="."]
 
 [node name="NPCS" type="TileMapLayer" parent="."]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAIAAcAAAAAAAAACwAuAAcAAAAAAAAAEgAxAAcAAAAAAAAAEwAzAAcAAAAAAAAAEQAtAAcAAAAAAAAAAgAvAAYAAAAAAAAAAwBFAAIAAAAAAAAADwAtAA8AAAAAAAAACAAjABMAAAAAAAAABAAaAA8AAAAAAAAABQBHAAsAAAAAAAAABgATAAUAAAAAAAAADQA=")
 tile_set = ExtResource("1_7385i")
 

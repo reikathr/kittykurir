@@ -27,4 +27,5 @@ else:
 		You: Okay, thank you, the both of you.
 		do ClueManager.add_clue("The 12-year-old lives somewhere between the house with the striped wallpaper and the 13-year-old's house, in that order.")
 		do ClueManager.add_clue("The house with the polkadot wallpaper is somewhere between the strawberry's house and Tomy's house, in that order.")
+		do GameState.set_has_received_galphie_clue(true)
 => END
