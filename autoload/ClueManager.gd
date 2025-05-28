@@ -3,7 +3,7 @@ extends Node
 var clues: Array[String] = []
 var selected_values := {}
 var last_clue_time := 0.0
-var max_idle_time := 10.0
+var max_idle_time := 20.0
 var npc_source_ids := range(1, 21)
 
 var correct_answers := {
@@ -18,7 +18,6 @@ var correct_answers := {
 signal clue_added(clue: String)
 signal empty_field(empty_fields: Array)
 signal wrong_answer(incorrect_fields: Array)
-
 
 var hint_duration := 5.0
 var hint_timer := 0.0
@@ -48,6 +47,31 @@ func add_clue(clue: String):
 		emit_signal("clue_added", clue)
 		print(clue)
 		last_clue_time = TimeManager.get_time()
+	
+		hint_active = false
+		hint_timer = 0.0
+
+		var world = GameState.world_scene
+		if world:
+			var player = world.get_node("Player")
+			if player:
+				player.hide_hint_arrow()
+
+			var npc_map = world.get_node("ClueLocator")
+			if npc_map:
+				var player_pos = player.global_position
+				var min_dist := INF
+				var closest_cell = null
+
+				for cell in npc_map.get_used_cells():
+					var world_pos = npc_map.to_global(npc_map.map_to_local(cell))
+					var dist = player_pos.distance_to(world_pos)
+					if dist < min_dist:
+						min_dist = dist
+						closest_cell = cell
+
+				if closest_cell != null:
+					npc_map.erase_cell(closest_cell)
 		
 func set_selection(category: String, house_index: int, value: String):
 	if not selected_values.has(category):
@@ -107,7 +131,9 @@ func provide_hint():
 		var player = world.get_node("Player")
 		if player:
 			player.show_hint_arrow(hint)
-
+	
+	hint_active = true
+	hint_timer = 0.0
 
 func reset():
 	clues.clear()
