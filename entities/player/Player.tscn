@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://dr0rn1ww5n5di"]
+[gd_scene load_steps=32 format=3 uid="uid://dr0rn1ww5n5di"]
 
 [ext_resource type="Texture2D" uid="uid://dbgec010ovv2h" path="res://assets/Kitty.png" id="1_mexq5"]
 [ext_resource type="Script" path="res://entities/player/Player.gd" id="1_tvlyn"]
+[ext_resource type="Texture2D" uid="uid://c7t4db7y2vjfr" path="res://assets/arrows.png" id="3_8svh2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gybe0"]
 radius = 7.2
@@ -210,6 +211,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbvh4"]
 radius = 9.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5gnw"]
+atlas = ExtResource("3_8svh2")
+region = Rect2(16, 0, 8, 8)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 17
 script = ExtResource("1_tvlyn")
@@ -237,3 +242,7 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_pbvh4")
+
+[node name="HintArrow" type="Sprite2D" parent="."]
+position = Vector2(12, -4)
+texture = SubResource("AtlasTexture_j5gnw")

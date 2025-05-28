@@ -20,7 +20,22 @@ signal empty_field(empty_fields: Array)
 signal wrong_answer(incorrect_fields: Array)
 
 
+var hint_duration := 5.0
+var hint_timer := 0.0
+var hint_active := false
+
 func _process(delta):
+	if hint_active:
+		hint_timer += delta
+		if hint_timer >= hint_duration:
+			hint_active = false
+			hint_timer = 0.0
+			var world = GameState.world_scene
+			if world:
+				var player = world.get_node("Player")
+				if player:
+					player.hide_hint_arrow()
+
 	if TimeManager.counting:
 		var current_time = TimeManager.get_time()
 		if current_time - last_clue_time > max_idle_time:
@@ -86,6 +101,13 @@ func validate_answers() -> bool:
 func provide_hint():
 	var hint = get_hint_direction_text()
 	print("Hint: Try heading " + hint + "!")
+
+	var world = GameState.world_scene
+	if world:
+		var player = world.get_node("Player")
+		if player:
+			player.show_hint_arrow(hint)
+
 
 func reset():
 	clues.clear()

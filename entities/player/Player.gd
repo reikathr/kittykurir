@@ -4,13 +4,21 @@ extends CharacterBody2D
 @onready var anim := $AnimatedSprite2D
 @onready var actionable_finder := $ActionableFinder
 @onready var disable_movement = false
+@onready var hint_arrow = $HintArrow
 
+var hint_blink_timer = null
 var last_direction := Vector2.UP
 var axis : int
-
+	
 func _ready():
 	DialogueManager.connect("dialogue_started", self._on_dialogue_started)
 	DialogueManager.connect("dialogue_ended", self._on_dialogue_ended)
+	hint_arrow.visible = false
+	hint_blink_timer = Timer.new()
+	hint_blink_timer.wait_time = 0.5
+	hint_blink_timer.one_shot = false
+	hint_blink_timer.timeout.connect(_on_hint_blink_timeout)
+	add_child(hint_blink_timer)
 	
 func _on_dialogue_started(_resource):
 	disable_movement = true
@@ -80,3 +88,27 @@ func update_actionable_finder():
 	else:
 		direction = Vector2(0, sign(last_direction.y))
 		actionable_finder.position = direction * 6
+		
+
+func _on_hint_blink_timeout():
+	hint_arrow.visible = !hint_arrow.visible
+	
+func show_hint_arrow(direction: String):
+	hint_arrow.visible = true
+	hint_blink_timer.start()
+
+	match direction:
+		"Up":
+			hint_arrow.rotation_degrees = 0
+		"Right":
+			hint_arrow.rotation_degrees = 90
+		"Down":
+			hint_arrow.rotation_degrees = 180
+		"Left":
+			hint_arrow.rotation_degrees = 270
+		_:
+			hint_arrow.rotation_degrees = 0
+
+func hide_hint_arrow():
+	hint_arrow.visible = false
+	hint_blink_timer.stop()
