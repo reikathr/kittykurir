@@ -21,6 +21,7 @@ var submissionResult = "FIll in the blanks."
 var check_counter = 3
 var isValidationDone = false
 var disablePlayerMovement = true
+var world_scene : Node = null
 
 signal met_blue_cat
 signal picked_up_goldfish
@@ -101,6 +102,7 @@ func _on_teleport_to(scene_name: String, pos: Vector2):
 		child.queue_free()
 
 	var new_scene = load("res://scenes/" + scene_name + ".tscn").instantiate()
+	GameState.world_scene = new_scene
 	world_holder.call_deferred("add_child", new_scene)
 
 	await get_tree().process_frame

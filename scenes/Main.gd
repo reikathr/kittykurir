@@ -9,6 +9,7 @@ func _ready():
 	GameState.connect("lose", self._on_lose)
 	var world_scene = load("res://scenes/rooms/PostOffice.tscn").instantiate()
 	world_holder.add_child(world_scene)
+	GameState.world_scene = world_scene
 
 func _on_win():
 	get_tree().change_scene_to_file("res://scenes/WinScreen.tscn")

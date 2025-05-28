@@ -9,6 +9,9 @@ func _process(delta):
 		
 func set_counting(value):
 	counting = value
+	
+func get_time():
+	return time_passed
 
 func get_formatted_time() -> String:
 	var minutes = int(time_passed) / 60
