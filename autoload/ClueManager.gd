@@ -19,16 +19,31 @@ signal clue_added(clue: String)
 signal empty_field(empty_fields: Array)
 signal wrong_answer(incorrect_fields: Array)
 
-var hint_duration := 5.0
+var hint_duration := 15.0
 var hint_timer := 0.0
 var hint_active := false
+var hint_refresh_interval := 3.0
+var hint_refresh_timer := 0.0
 
 func _process(delta):
 	if hint_active:
 		hint_timer += delta
+		hint_refresh_timer += delta
+
+		if hint_refresh_timer >= hint_refresh_interval:
+			hint_refresh_timer = 0.0
+			var hint = get_hint_direction_text()
+			print("Refreshing hint: Try heading " + hint + "!")
+			var world = GameState.world_scene
+			if world:
+				var player = world.get_node("Player")
+				if player:
+					player.show_hint_arrow(hint)
+
 		if hint_timer >= hint_duration:
 			hint_active = false
 			hint_timer = 0.0
+			hint_refresh_timer = 0.0
 			var world = GameState.world_scene
 			if world:
 				var player = world.get_node("Player")
@@ -39,7 +54,8 @@ func _process(delta):
 		var current_time = TimeManager.get_time()
 		if current_time - last_clue_time > max_idle_time:
 			provide_hint()
-			last_clue_time = current_time 
+			last_clue_time = current_time
+
 		
 func add_clue(clue: String):
 	if clue not in clues:
@@ -134,6 +150,7 @@ func provide_hint():
 	
 	hint_active = true
 	hint_timer = 0.0
+	hint_refresh_timer = 0.0
 
 func reset():
 	clues.clear()
